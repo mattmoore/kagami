@@ -1,4 +1,4 @@
-# Kagami (Library)
+# Kagami Library
 
 This is the library for Kagami frontend (GUI + CLI): https://github.com/mattmoore/kagami-app.git
 
