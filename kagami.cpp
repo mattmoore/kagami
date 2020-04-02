@@ -4,17 +4,10 @@ Kagami::Kagami()
 {
 }
 
-void Kagami::screenshot() {
-    CGImageRef screenShot = CGWindowListCreateImage(
-                CGRectInfinite,
-                kCGWindowListOptionOnScreenOnly,
-                kCGNullWindowID,
-                kCGWindowImageDefault
-                );
-
-    CFStringRef file = CFSTR("/Users/mattmoore/Desktop/lala.jpg");
-    CFStringRef type = CFSTR("public.jpeg");
-    //CFURLRef urlRef = CFURLCreateWithString(NULL, file, NULL);
+void Kagami::screenshot(const std::string path) {
+    CGImageRef screenShot = CGWindowListCreateImage(CGRectInfinite, kCGWindowListOptionOnScreenOnly, kCGNullWindowID, kCGWindowImageDefault);
+    CFStringRef file = CFStringCreateWithCString(kCFAllocatorDefault, path.c_str(), kCFStringEncodingUTF8);
+    CFStringRef type = CFSTR("public.png");
     CFURLRef urlRef = CFURLCreateWithFileSystemPath(kCFAllocatorDefault, file, kCFURLPOSIXPathStyle, false);
     CGImageDestinationRef idst = CGImageDestinationCreateWithURL(urlRef, type, 1, NULL);
     CGImageDestinationAddImage(idst, screenShot, NULL);

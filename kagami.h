@@ -3,12 +3,13 @@
 
 #include "kagami_global.h"
 #include <ApplicationServices/ApplicationServices.h>
+#include <string>
 
 class KAGAMI_EXPORT Kagami
 {
 public:
     Kagami();
-    void screenshot();
+    void screenshot(const std::string);
 };
 
 #endif // KAGAMI_H
