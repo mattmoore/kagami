@@ -5,10 +5,7 @@
 #include <ApplicationServices/ApplicationServices.h>
 #include <string>
 
-class KAGAMI_EXPORT Kagami
-{
-public:
-    Kagami();
+namespace Kagami {
     void screenshot(const std::string);
 };
 
